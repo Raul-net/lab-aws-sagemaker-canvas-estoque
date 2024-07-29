@@ -1,47 +1,27 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
-
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
-
-## 📋 Pré-requisitos
-
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
-
-
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
-
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
-
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+# 📊 Passos realizados-
+- primeiro acessei o arquivo onde contém os datasets que foram disponibilizados pelo professor;
+- Baixei o dataset chamado: "dataset 500-curso-sagemaker-canvas-dio";
+- apliquei o dataset ao sagemaker canvas;
+- após fazer o upload do arquivo no canvas, selecionei o item no qual eu gostaria de realizar a análise(quantidade de estoque);
+- aguardei 10 minutos para que a análise fosse feita.
 
 
-## 🚀 Passo a Passo
+## 🎯 DADOS COLETADOS 
+![Captura de tela 2024-07-29 175955](https://github.com/user-attachments/assets/e0ddf696-8fa3-4e76-ab6d-c610222c2eee)
 
-### 1. Selecionar Dataset
+Avg.wQL 0.860= representa a média ponderada de perdas, quanto mais próximo de zero for o valor, mais precisa será a previsão, o valor foi relativamente bom, já que o tempo de preparo da máquia foi de mais ou menos 10 minutos 
+MAPE 0.290= representa o erro percentual médio absoluto, ou seja, é a diferença entre as porcentagens médias do  valor previsto/esperado e valor real. caso o valor seja 0, o modelo é perfeito, sem margens de erro.
+WAPE 0.152= representa o erro percentual absoluto ponderado, leva em consideração a importância de cada item no estoque, itens de maior importãncia causarão um maior impacto na métrica, um WAPE menor é mais desejado pois significa que o modelo está prevendo com mais precisão para os itens mais críticos.
+RMSE 1.535= representa a rais do erro quadrático médio, mede a diferença média entre os valores da previsão e os valores reais, com um RMSE menor, a previsão fica mais próxima do valor real.
+MASE 0.180= representa o erro escalao médio absoluto, compara o erro da previsão com um moelo simples. Com MASE menor que 1 signfica que o modelo está fazendo previsões mais precisas. (no caso do meu modelo, deu 0.180) isso não é um bom sinal pois o modelo não está com uma precisão boa.
+   Mesmo que o valor da MASE não tenha sido muito boa, o restante do modelo não houve nenhum erro ou algo fora do comum, foi importante para identificar e definir se o modelo atende a expectativa esperada para seu próprio negócio.
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
 
-### 2. Construir/Treinar
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+## 🚀 PREVISÕES
+- previsões pessimitas representada por P10
+- previsões conservadoras ou neutras representadas por P50
+- previsões otimistas são representadas por P90
 
-### 3. Analisar
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
-
-### 4. Prever
-
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+   Essas previsões são importantes para observar quando, por exemplo, algum produto terá pouca demanda, muita ou com um valor próximo do habitual.
